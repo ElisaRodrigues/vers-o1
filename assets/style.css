@@ -1,0 +1,214 @@
+.hidden.menu {
+  display: none;
+}
+
+.masthead h1, .masthead h2, .masthead span {
+  text-shadow: 1px 2px #1a1818;
+}
+
+.masthead.segment {
+  background-color: #0a256a !important;
+  min-height: 650px;
+  padding: 1em 0em;
+}
+
+
+.form-cadastro-produtos{
+  padding: 40px;
+  border-radius: 5px;
+  margin-top: 15px;
+  width: 90%;
+}
+.form-cadastro-produtos h1{
+  text-align: center;
+  color: #363636;
+  font-size: 2rem;
+  font-style: normal;
+}
+.masthead .logo.item img {
+  margin-right: 1em;
+}
+.masthead .ui.menu .ui.button {
+  margin-left: 0.5em;
+}
+.masthead h1.ui.header {
+  margin-top: 3em;
+  margin-bottom: 0em;
+  font-size: 4em;
+  font-weight: normal;
+}
+.masthead h2 {
+  font-size: 1.7em;
+  font-weight: normal;
+}
+
+.masthead .question {
+  display: block;
+  font-style: italic;
+  margin: 0 0 15px 0;
+}
+
+.ui.vertical.stripe {
+  padding: 5.5em 0em;
+}
+.ui.vertical.stripe h3 {
+  font-size: 2em;
+}
+.ui.vertical.stripe .button + h3,
+.ui.vertical.stripe p + h3 {
+  margin-top: 3em;
+}
+.ui.vertical.stripe .floated.image {
+  clear: both;
+}
+.ui.vertical.stripe p {
+  font-size: 1.33em;
+}
+.ui.vertical.stripe .horizontal.divider {
+  margin: 3em 0em;
+}
+
+.quote.stripe.segment {
+  padding: 0em;
+}
+.quote.stripe.segment .grid .column {
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
+.footer.segment {
+  padding: 5em 0em;
+}
+
+.secondary.pointing.menu .toc.item {
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+  .ui.fixed.menu {
+    display: none !important;
+  }
+  .secondary.pointing.menu .item,
+  .secondary.pointing.menu .menu {
+    display: none;
+  }
+  .secondary.pointing.menu .toc.item {
+    display: block;
+  }
+  .masthead.segment {
+    min-height: 350px;
+  }
+  .masthead h1.ui.header {
+    font-size: 2em;
+    margin-top: 1.5em;
+  }
+  .masthead h2 {
+    margin-top: 0.5em;
+    font-size: 1.5em;
+  }
+}
+
+/*MENU*/
+
+.ui.secondary.inverted.pointing.menu {
+  border-width: 0px;
+}
+
+.ui.menu .item {
+  padding: 1.5em 1.14285714em;
+}
+
+.pusher .menu a {
+  text-shadow: 2px 2px 2px #1a1818;
+}
+
+/*FORMULARIOS*/
+.form-sobre-fotos {
+  background: rgba(173, 216, 230, 0.55);
+  padding: 40px;
+  border-radius: 5px;
+  margin-top: 25px;
+}
+
+.form-cadastro-produtos{
+  padding: 40px !important;
+  border-radius: 5px !important;
+  margin-top: 15px !important;
+  width: 100% !important;
+}
+.form-cadastro-produtos h1{
+  text-align: center !important;
+  color: honeydew !important;
+  font-size: 2rem !important;
+  font-style: normal !important;
+}
+
+
+.texto-maior{
+  font-size: 4em !important;
+}
+.segundo-texto{
+  font-size: 2em !important;
+}
+.terceiro-texto{
+  font-size:1.5em !important;
+  text-shadow: 1px 2px #1a1818 ;
+  font-weight: normal;
+}
+ui.checkbox{
+  display: -webkit-inline-box;
+}
+.imagem-perfil{
+  margin-left: 30px !important;
+  width: 250px;
+}
+
+.botoes-perfil button.huge.ui.button{
+  display: inline-block;
+  float: left;
+  clear: both;
+  margin: 10px;
+  width: 300px;
+}
+.informacoes-perfil{
+  font-size: 25px;
+  font-style: normal;
+  color: white;
+  text-align: center;
+  background: rgba(173, 216, 230, 0.55);
+  padding: 7px;
+  border-radius: 5px;
+  margin-top: 1px;
+
+}
+.imagem-catalogo{
+  margin-left: 45px !important;
+  width: 200px;
+  margin-top: 35px;
+}
+.masthead.segment.tela-informacoes{
+  background: url("images/esto.jpg") !important;
+}
+.imagem-informacoes{
+   margin-left: 150px !important;
+   width: 250px;
+ }
+.textos-informacoes {
+  font-size: larger;
+}
+
+.ui.search input::placeholder, .ui.search i.search.icon{
+  color: darkgray;
+}
+.ui.inverted.segment, .ui.primary.inverted.segment {
+    background: #1b1c1d; !important;
+    color: rgba(212, 212, 212, 0.9); !important;
+}
+.ui.inverted.segment, .ui.primary.inverted.segment.textos-informacoes h1 {
+    background: #1b1c1d; !important;
+    color: rgba(255, 255, 255, 0.9); !important;
+}
+.ui.breadcrumb a {
+  color: #5ebbef;
+}
+
