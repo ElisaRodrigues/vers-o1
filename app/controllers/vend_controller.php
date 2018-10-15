@@ -29,10 +29,11 @@ function editar(){
     require_once __DIR__."/../views/perfil_vendedor/editar_vendedor.php";
 }
 
-function excluir($id){
+function excluirVend($id_usuario){
     $crud = new CrudVendedor();
-    $crud->excluir($id);
-    require __DIR__.'/produto_controller.php?acao=listar';
+    $crud->excluir($id_usuario);
+
+    header("location: http://localhost/tcc/app/views/login.php") ;
 }
 
 //ROTAS
@@ -47,9 +48,8 @@ if (isset($_GET['acao']) && !empty($_GET['acao']) ) {
 
     } elseif ($_GET['acao'] == 'editar') {
         editar();
-
     }elseif ($_GET['acao'] == 'excluir') {
-        excluir($_GET['id']);
+        excluirVend($_GET['id_usuario']);
 
     }elseif ($_GET['acao'] == 'listar') {
         listar();

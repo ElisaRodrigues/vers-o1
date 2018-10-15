@@ -1,7 +1,5 @@
 <?php
 require_once "indexperfil.php";
-//var_dump($produto);
-//die();
 ?>
 <div id="page-wrapper">
     <!-- Page Content -->
@@ -13,7 +11,6 @@ require_once "indexperfil.php";
             <div class="col-md-6 col-sm-12">
                 <div class="thumbnail">
                     <a href="#"><img class="card-img-top" src="../../assets/imagesSalvas/<?= $produto->imagem ?>" alt=""></a>
-                    <?=  $produto->idTipoProduto; ?>
                 </div>
                 <h3 class="ui horizontal divider header"><i class="tag icon"></i>Descrição</h3>
                 <div class="panel panel-primary">
@@ -29,9 +26,12 @@ require_once "indexperfil.php";
 
                     <h2 style="color: #0a256a; margin-top: 20px">Nome: <?= $produto->nome ?></h2>
 
-                <h3> Referência:  <?= $produto->referencia ?></h3>
+                <h3 style="color: #0a256a">Referência: </h3>
+                <div><h4><?= $produto->referencia ?></h4></div>
 
-                <h3 style="color: #0A0A0A">Preço: <?= $produto->preco ?></h3>
+
+                <h3 style="color: #0a256a">Preço: </h3>
+                <div><h4><?= $produto->preco ?></h4></div>
 
                 <h3 style="color: #0a256a">Tamanho:</h3>
                 <div><h4><?= $produto->tamanho ?></h4></div>

@@ -12,27 +12,27 @@
                     Informações
                 </div>
                 <div class="panel-footer">
-                    Nome: echo <?php $administrados->getNome; ?>
+                    Nome: echo <?= $admin->getNome(); ?>
                 </div>
 
                 <div class="panel-footer">
-                    Email: <?php echo $admin->getEmail; ?>
+                    Email: <?= $admin->getEmail(); ?>
                 </div>
 
                 <div class="panel-footer">
-                    Telefone: <?php echo $admin->telefone; ?>
+                    Telefone: <?= $admin->telefone; ?>
                 </div>
 
                 <div class="panel-footer">
-                    CNPJ: <?php echo $admin->cnpj; ?>
+                    CNPJ: <?= $admin->cnpj; ?>
                 </div>
 
                 <div class="panel-footer">
-                    Razão Social: <?php echo $admin->razao_social; ?>
+                    Razão Social: <?= $admin->razao_social; ?>
                 </div>
 
                 <div class="panel-footer">
-                    Nome Fantasia: <?php echo $admin->nome_fantasia; ?>
+                    Nome Fantasia: <?= $admin->nome_fantasia; ?>
                 </div>
 
             </div>
@@ -47,5 +47,4 @@
 
 
     <?php require_once "rodape.php"; ?>
-
 

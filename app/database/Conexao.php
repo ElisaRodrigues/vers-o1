@@ -11,6 +11,7 @@ class Conexao {
             if(self::$conexao == null){
                 self::$conexao = new PDO("mysql:host=".self::HOST.";dbname=".self::NOMEBANCO, self::USUARIO, self::SENHA);
                 self::$conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                //self::$conexao->setAttribute()
             }
             return self::$conexao;
         }catch(PDOException $e){

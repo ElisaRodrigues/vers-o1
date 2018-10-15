@@ -52,7 +52,7 @@ class CrudCliente1{
     }
 
     public function deletarCliente($id_cliente){
-        $delete = "DELETE FROM cliente_loja WHERE idCliente = $id_cliente";
-        return $this->conexao->exec($delete);
-    }
+    $delete = "DELETE FROM cliente_loja WHERE idCliente = $id_cliente";
+    return $this->conexao->exec($delete);
+}
 }

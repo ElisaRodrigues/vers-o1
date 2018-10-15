@@ -46,16 +46,16 @@
 <!-- MENU FIXO -->
 <div class="ui large top fixed hidden menu borderless">
     <div class="ui container">
-        <a class="active item">Início</a>
-        <a class="item">Ajuda</a>
-        <a class="item">Sobre</a>
+        <a href="http://localhost/tcc/app/views/tela_inicio.php" class="active item">Início</a>
+        <a href="http://localhost/tcc/app/views/ajuda.phtml"     class="item">Ajuda</a>
+        <a href="http://localhost/tcc/app/views/tela_sobre.php"  class="item">Sobre</a>
         <a class="item">Login</a>
         <div class="right menu">
             <div class="item">
-                <a class="ui button">entrar</a>
+                <a class="ui button">Entrar</a>
             </div>
             <div class="item">
-                <a class="ui primary button">cadastrar-se</a>
+                <a class="ui primary button">Cadastrar-se</a>
             </div>
         </div>
     </div>
@@ -63,30 +63,41 @@
 
 <!-- Sidebar Menu -->
 <div class="ui vertical inverted sidebar menu">
-    <a class="active item">Início</a>
-    <a class="item">Ajuda</a>
-    <a class="item">Sobre</a>
+    <a href="http://localhost/tcc/app/views/tela_inicio.php" class="active item">Início</a>
+    <a href="http://localhost/tcc/app/views/ajuda.phtml"     class="item">Ajuda</a>
+    <a href="http://localhost/tcc/app/views/tela_sobre.php"  class="item">Sobre</a>
     <a class="item">Login</a>
+    <br class="ui search"><br>
+    <div class="ui transparent left icon input">
+        <input type="text" placeholder="Procurar">
+        <i class="search icon"></i>
+    </div>
+    <div class="results"> </div>
 </div>
 
 <!-- Page Contents -->
 <div class="pusher">
 
-        <div class="ui container">
-            <div class="ui large secondary inverted pointing menu">
-                <a class="toc item">
-                    <i class="sidebar icon"></i>
-                </a>
-
-                <a href="http://localhost/tcc/app/views/tela_inicio.php" class="active item">Início</a>
-                <a href="http://localhost/tcc/app/views/ajuda.phtml" class="item">Ajuda</a>
-                <a href="http://localhost/tcc/app/views/tela_sobre.php" class="item">Sobre</a>
-                <br class="ui search"><br>
-                    <div class="ui transparent left icon input">
-                    <input type="text" placeholder="Procurar">
+    <div class="ui container">
+        <div class="ui large secondary inverted pointing menu">
+            <a class="toc item">
+                <i class="sidebar icon"></i>
+            </a>
+            <img src="">
+            <a class="active item">Início</a>
+            <a href="http://localhost/tcc/app/views/ajuda.phtml" class="item">Ajuda</a>
+            <a href="#o-que-fazemos" class="item">O que fazemos</a>
+            <a href="http://localhost/tcc/app/views/tela_sobre.php" class="item">Sobre</a>
+            <div class="ui search">
+                <br> <div class="ui transparent left icon input">
+                    <input type="text" placeholder="Procurar...">
                     <i class="search icon"></i>
                 </div>
-                    <div class="results"></div>
+                <div class="results"></div>
+            </div>
+            <div class="right item">
+                <a href="login.php" class="ui inverted button">Entrar<i class="sign in icon float right"></i></a>
 
             </div>
         </div>
+    </div>

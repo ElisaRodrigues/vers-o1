@@ -18,7 +18,7 @@ class Produto {
 
     //cor, tamanho, descricao
 
-    function __construct($nome, $preco, $referencia, $estoque, $estoqueMin, $descricao, $tamanho, $cor, $tipoProduto, $imagem, $id = null) {
+    function __construct($nome, $preco, $referencia, $estoque, $estoqueMin, $descricao = null, $tamanho = null, $cor, $tipoProduto, $imagem = null, $id = null) {
 
     	$this->nome = $nome;
         $this->preco = $preco;
@@ -31,5 +31,6 @@ class Produto {
         $this->cor = $cor;
         $this->imagem = $imagem;
         $this->id = $id;
+
     }
 }

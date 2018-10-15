@@ -24,10 +24,18 @@ class CrudUsuario{
         return $usuarios;
     }
 
+
+    public function getUsuario($idUsuario){
+        $sql = "SELECT * FROM usuarios WHERE idUsuarios = {$idUsuario} ";
+        $usuario = $this->conexao->query($sql)->fetch(PDO::FETCH_ASSOC);
+
+        return new Usuario($usuario['nome'], $usuario['email'], $usuario['senha'], $usuario['telefone'], $usuario['idUsuarios']);
+    }
+
     //excluir usuario
     //OKAY
     public function excluirUsuario($idUsuario){
-        $this->conexao->exec("DELETE FROM usuarios WHERE idUsuarios = $idUsuario");
+        $this->conexao->exec("DELETE FROM usuarios WHERE dUsuarios = $idUsuario");
     }
 
     public function nivelAcesso(){
@@ -35,3 +43,7 @@ class CrudUsuario{
         $nivelAcesso = $this->conexao->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 }
+
+$bls = new CrudUsuario();
+//$bls->getUsuarios();
+$bls->getUsuario(5);

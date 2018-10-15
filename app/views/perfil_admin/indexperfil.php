@@ -1,10 +1,3 @@
-<?php
-
-if(isset($_SESSION['vendedor'])){
-    echo "/../perfil_vendedor/indexperfil.php";
-}
-
-?>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -33,8 +26,8 @@ if(isset($_SESSION['vendedor'])){
 
     <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
         <span id="tamanhoicones">
-        <a href="http://localhost/tcc/app/views/perfil_admin/configuracoes.php" class="glyphicon glyphicon-cog" style="margin-top: 18px" aria-hidden="true"></a>
-        <a href="http://localhost/tcc/app/views/perfil_admin/notificaçoes.php" class="glyphicon glyphicon-bell" aria-hidden="true"></a>
+       <!-- <a href="http://localhost/tcc/app/views/perfil_admin/configuracoes.php" class="glyphicon glyphicon-cog" style="margin-top: 18px" aria-hidden="true"></a>
+        <a href="http://localhost/tcc/app/views/perfil_admin/notificaçoes.php" class="glyphicon glyphicon-bell" aria-hidden="true"></a> -->
             </span>
 
         <div class="navbar-header">
@@ -61,18 +54,12 @@ font-size: 16px;"><a href="http://localhost/tcc/app/crud/login/closed.php" class
                     <img src="http://localhost/tcc/assets/img/find_user.png" class="user-image img-responsive"/>
                 </li>
 
-
                 <li>
                     <a class="active-menu"  href="http://localhost/tcc/app/controllers/produto_controller.php?acao=listar"><i class="fa fa-desktop fa-3x"></i>Catálogo</a>
-                   <!-- <a class="active-menu"  href="http://localhost/tcc/app/controllers/admin_controller.php?acao=listarAdmin&idAdministrador=<?= $administrador->idAdministrador; ?>"><i class="fa fa-desktop fa-3x"></i>Catálogo</a> -->
+                    <!-- <a class="active-menu"  href="http://localhost/tcc/app/controllers/admin_controller.php?acao=listarAdmin&idAdministrador=<?php $administrador->idAdministrador; ?>"><i class="fa fa-desktop fa-3x"></i>Catálogo</a> -->
                 </li>
                 <li>
-                    <a href="http://localhost/tcc/app/views/perfil_admin/informacoesperfil.php"><i class="glyphicon glyphicon-user fa-3x" style="margin-right: 10px" aria-hidden="true"></i>Perfil</a>
-                </li>
-
-                <li>
-                    <a href="http://localhost/tcc/app/views/perfil_admin/historico.php"><i class="glyphicon glyphicon-folder-close fa-3x" aria-hidden="true"></i> Histórico </a>
-
+                    <a href="http://localhost/tcc/app/controllers/admin_controller.php?acao=listarAdmin"><i class="glyphicon glyphicon-user fa-3x" style="margin-right: 10px" aria-hidden="true"></i>Perfil</a>
                 </li>
 
                 <li>
@@ -84,22 +71,20 @@ font-size: 16px;"><a href="http://localhost/tcc/app/crud/login/closed.php" class
                         <li>
                             <a href="http://localhost/tcc/app/controllers/cliente1_controller.php?acao=cadastrar">Lojas</a>
                         </li>
-
-
-
                     </ul>
                 </li>
                 <li>
                     <a href="#"><i class="glyphicon glyphicon-eye-open fa-3x" aria-hidden="true"></i>Visualizar<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li>
+                       <!-- <li>
                             <a href="http://localhost/tcc/app/views/perfil_admin/visualizarrelatorios.php">Relatórios</a>
-                        </li>
+                        </li> -->
+
                         <li>
                             <a href="http://localhost/tcc/app/controllers/cliente1_controller.php?acao=index">Lojas</a>
                         </li>
                         <li>
-                           <!-- <a href="../../controllers/usuario_controller.php?acao=listarVends">Vendedores Cadastrados</a> -->
+                            <!-- <a href="../../controllers/usuario_controller.php?acao=listarVends">Vendedores Cadastrados</a> -->
                             <a href="http://localhost/tcc/app/controllers/vend_controller.php?acao=listar">Vendedores Cadastrados</a>
                         </li>
 
@@ -110,4 +95,4 @@ font-size: 16px;"><a href="http://localhost/tcc/app/crud/login/closed.php" class
         </div>
 
     </nav>
-    </html>
+</html>

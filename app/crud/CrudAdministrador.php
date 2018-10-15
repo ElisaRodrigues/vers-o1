@@ -27,18 +27,27 @@ class CrudAdministrador{
         print_r($administradores);
     }
 
-    public function getAdministrador($idAdministrador){
+    public function getAdministrador($id_usuario){
+
         $sql = "SELECT usuarios.idUsuarios, usuarios.nome,email,senha,telefone, administrador.razao_social,nome_fantasia,cnpj
                   FROM administrador INNER JOIN usuarios ON administrador.id_usuarios = usuarios.idUsuarios
-                  WHERE usuarios.idUsuarios = id_usuarios ";
+                  WHERE administrador.id_usuarios = $id_usuario";
+
         $administrador = $this->conexao->query($sql)->fetch(PDO::FETCH_ASSOC);
 
-        return new Administrador($administrador['nome'], $administrador['email'], $administrador['senha'], $administrador['telefone'], $administrador['razao_social'], $administrador['nome_fantasia'], $administrador['cnpj'], $administrador['idUsuarios']);
+        //print_r($administrador);
+        //die;
 
+        return new Administrador($administrador['nome'], $administrador['email'], $administrador['senha'], $administrador['telefone'], $administrador['razao_social'], $administrador['nome_fantasia'], $administrador['cnpj'], $administrador['idUsuarios']);
     }
 
-    public function excluir($idAdministrador){
-        $this->conexao->exec("DELETE FROM administrador WHERE idAdministrador = $idAdministrador");
+    public function excluir($id_usuario){
+
+        $id_administrador = $this->conexao->query("SELECT idAdministrador  FROM administrador WHERE id_usuarios = $id_usuario")->fetch();
+        $id_administrador = $id_administrador['idAdministrador'];
+
+        $this->conexao->exec("DELETE FROM administrador WHERE idAdministrador = $id_administrador");
+        $this->conexao->exec("DELETE FROM usuarios WHERE idUsuarios = $id_usuario");
     }
 
 //Dar uma olhadinha com muito carinho
@@ -59,11 +68,11 @@ class CrudAdministrador{
 
 //$adm = new Administrador("leaneth","leaneth@teste.com", "123", 65432189, "leaneth", "leaneth" ,46587427649);
 
-//$crud = new CrudAdministrador();
+$crud = new CrudAdministrador();
 
 //$crud->getAdministradores(); //Okay - funcionando
 
-//$crud->getAdministrador(31); //Okay - funcionando
+//$crud->getAdministrador(40);
 
 //$crud->cadastrar($adm); //Okay - funcionando
 

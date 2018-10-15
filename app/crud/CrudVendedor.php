@@ -27,14 +27,29 @@ class CrudVendedor{
         return $vendedores;
     }
 
-    public function getVendedor($idVendedor){
-        $sql = "SELECT usuarios.idUsuarios, usuarios.nome,email,senha,telefone, vendedor.empresa, cpf FROM vendedor INNER JOIN usuarios ON vendedor.id_usuarios = usuarios.idUsuarios WHERE usuarios.idUsuarios = id_usuarios ";
+    public function getVendedor($id_usuario){
+
+        $sql = "SELECT usuarios.idUsuarios, usuarios.nome,email,senha,telefone, vendedor.cpf,empresa
+                  FROM vendedor INNER JOIN usuarios ON vendedor.id_usuarios = usuarios.idUsuarios
+                  WHERE vendedor.id_usuarios = $id_usuario";
+
         $vendedor = $this->conexao->query($sql)->fetch(PDO::FETCH_ASSOC);
-        return new Vendedor($vendedor['nome'], $vendedor['email'], $vendedor['senha'], $vendedor['telefone'], $vendedor['cpf'], $vendedor['empresa'], $vendedor['idUsuarios']);
+
+        print_r($vendedor);
+
+        return new Administrador($vendedor['nome'], $vendedor['email'], $vendedor['senha'], $vendedor['telefone'], $vendedor['cpf'], $vendedor['empresa'],  $vendedor['idUsuarios']);
+
+
+
     }
 
-    public function excluir($idVendedor){
-        $this->conexao->exec("DELETE FROM vendedor WHERE idVendedor = $idVendedor");
+    public function excluir($id_usuario){
+
+        $id_vendedor = $this->conexao->query("SELECT idVendedor  FROM vendedor WHERE id_usuarios = $id_usuario")->fetch();
+        $id_vendedor = $id_vendedor['idVendedor'];
+
+        $this->conexao->exec("DELETE FROM vendedor WHERE idVendedor = $id_vendedor");
+        $this->conexao->exec("DELETE FROM usuarios WHERE idUsuarios = $id_usuario");
     }
 
     public function  editar ($id_vendedor){

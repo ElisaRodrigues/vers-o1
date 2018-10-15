@@ -1,5 +1,4 @@
 <?php
-
 require_once __DIR__.'/../crud/CrudProdutos.php';
 require_once __DIR__.'/../models/Produto.php';
 
@@ -17,10 +16,7 @@ function salvar(){
     $origem = $_FILES['imagem']['tmp_name'];
     $nome_img = date('dmyhis').$_FILES['imagem']['name'];
     $destino = __DIR__.'/../../assets/imagesSalvas/'.$nome_img;
-
-
     $x = move_uploaded_file($origem, $destino);
-
 
     $produto = new Produto($_POST['nome'], $_POST['preco'], $_POST['referencia'], $_POST['estoque'],  $_POST['estoqueMin'], $_POST['descricao'],$_POST['tamanho'], $_POST['cor'], $_POST['tipoProduto'], $nome_img);
     $crud = new CrudProdutos();
@@ -29,7 +25,6 @@ function salvar(){
     if ($resultado == 1) {
         listar();
     }
-
     header("Location: http://localhost/tcc/app/controllers/produto_controller.php?acao=listar");
 }
 
@@ -37,14 +32,13 @@ function listar(){
     session_start();
     $crud = new CrudProdutos();
     $listaProdutos = $crud->getProdutos();
+    $imagens = $crud->getImagens();
 
-    if(isset($_SESSION['vendedor'])){
+    if($_SESSION['tipo_user'] == 'vendedor'){
         require __DIR__.'/../views/perfil_vendedor/catalogo.php';
     }else{
-        //require __DIR__.'/../views/perfil_vendedor/catalogo.php';
         require_once __DIR__ .'/../views/perfil_admin/catalogo.php';
     }
-
 }
 
 function editar ($id){ //TA DANDO ERRADO
@@ -95,7 +89,6 @@ if (isset($_GET['acao']) && !empty($_GET['acao']) ) {
 
 	} else {
         listar();
-
 	}
 } else {
 	listar();

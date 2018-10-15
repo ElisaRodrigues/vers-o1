@@ -6,7 +6,6 @@
 
     <div id="page-inner" class="container">
 
-        <?php foreach($produtos as $produto): ?>
 
         <div class="row">
 

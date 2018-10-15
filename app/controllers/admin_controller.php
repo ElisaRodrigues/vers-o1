@@ -3,10 +3,19 @@
 require_once __DIR__. '/../crud/CrudAdministrador.php';
 require_once __DIR__. '/../models/Administrador.php';
 
-function listarAdmin($id){
+function perfil_admin(){
+    session_start();
     $administrador = new CrudAdministrador();
-    $admin = $administrador->getAdministrador($idAdministrador);
-    include __DIR__."/../views/perfil_admin/visualizarvendedores.php";
+    $admin = $administrador->getAdministrador($_SESSION['id_user']);
+    include __DIR__."/../views/perfil_admin/informacoesperfil.php";
+}
+
+function listarAdmin(){
+    session_start();
+
+    $administrador = new CrudAdministrador();
+    $admin = $administrador->getAdministrador($_SESSION['id_user']);
+    include __DIR__."/../views/perfil_admin/informacoesperfil.php";
 }
 
 function cadastrarAdmin(){
@@ -24,20 +33,18 @@ function salvarAdmin(){ //DANDO ERRO
     header("Location: http://localhost/tcc/app/controllers/produto_controller.php?acao=listar");
 }
 
-    function editarAdmin(){
-        $crud = new CrudAdministrador();
-
-        $admin = $crud->getAdministrador(4);
-
-        require_once "../views/perfil_admin/editar_admin.php";
-
-    }
-
-function excluirAdmin($id){
+function editarAdmin(){
     $crud = new CrudAdministrador();
-    $crud->excluir($id);
-    require 'http://localhost/tcc/app/controllers/produto_controller.php?acao=listar';
+    $admin = $crud->getAdministrador(4);
+    require_once  __DIR__."/../views/perfil_admin/editar_admin.php";
 }
+
+function excluirAdmin($id_usuario){
+    $crud = new CrudAdministrador();
+    $crud->excluir($id_usuario);
+    header("location: http://localhost/tcc/app/views/login.php") ;
+}
+
 //ROTAS
 if (isset($_GET['acao']) && !empty($_GET['acao']) ) {
 
@@ -48,15 +55,19 @@ if (isset($_GET['acao']) && !empty($_GET['acao']) ) {
     } elseif ($_GET['acao'] == 'salvar') {
         salvarAdmin();
 
+    } elseif ($_GET['acao'] == 'perfil_admin') {
+        perfil_admin();
+
     } elseif ($_GET['acao'] == 'editarAdmin') {
         editarAdmin();
 
     }elseif ($_GET['acao'] == 'excluir') {
-        excluirAdmin($_GET['id']);
+        excluirAdmin($_GET['id_usuario']);
 
-    }}elseif ($_GET['acao'] == 'listarAdmin') {
-        listarAdmin($_GET['id']);
+    }elseif ($_GET['acao'] == 'listarAdmin') {
+        listarAdmin();
 
     } else {
-        require 'http://localhost/tcc/app/views/cadastro_admin.php';
+        require"http://localhost/tcc/app/views/cadastro_admin.php";
     }
+}
